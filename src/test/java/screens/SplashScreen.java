@@ -15,4 +15,9 @@ public class SplashScreen extends BaseScreen{
     public boolean validateVersionApp(){
         return isTextEqual(versionApp, "Version 1.0.0");
     }
+
+    public SearchScreen goToSearchScreen() {
+        pause(5);
+        return new SearchScreen(driver);
+    }
 }
