@@ -37,6 +37,13 @@ public class BaseScreen {
         element.sendKeys(text);
     }
 
+    public void typeCtrl(MobileElement element, String text) {
+        element.click();
+        element.sendKeys();
+        element.clear();
+        element.sendKeys(text);
+    }
+
     public void clickButtonBack() {
         driver.navigate().back();
     }
@@ -52,5 +59,9 @@ public class BaseScreen {
         }
 
 
+    }
+
+    public boolean textInElementPresent(MobileElement element, String text, int time){
+        return new WebDriverWait(driver, time).until(ExpectedConditions.textToBePresentInElement(element, text));
     }
 }
